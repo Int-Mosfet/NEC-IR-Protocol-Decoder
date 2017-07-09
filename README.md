@@ -5,7 +5,7 @@ Very simple code, no interrupts.  I use the __delay_us() function for timing, wh
 
 There is a bug I haven't fixed, I believe the LED I'm using is causing false activations (based off some of my work with infrared devices, they can be "ambient light" detectors as well).  Or the LED is emitting IR light.  All that's needed to trigger an activation is to go high for 9ms, then it will return a code of 0xFF since no bits are being sent, just holding high.  I bet if it required low then high, that this would be filtered out.
 
-Another interesting thing, I encountered a hardware erratum in the PIC18 core (pretty terrible bug).  My professor didn't believe me when I told him my code wasn't wrong :( .  This was causing the EUSART to not function properly.  According to here:  "TBLRD requires NVMREG value to point to appropriate memory".  The workaround for htis bug is the "powerup.as" file.  Pretty cool that a piece of assembly code can patch a hardware erratum.</br>
+Another interesting thing, I encountered a hardware erratum in the PIC18 core (pretty terrible bug).  My professor didn't believe me when I told him my code wasn't wrong :( .  This was causing the EUSART to not function properly.  According to here:  "TBLRD requires NVMREG value to point to appropriate memory".  http://ww1.microchip.com/downloads/en/DeviceDoc/80000713A.pdf  The workaround for htis bug is the "powerup.as" file.  Pretty cool that a piece of assembly code can patch a hardware erratum.</br>
 
 View of project:</br>
 ![ir_pic1](https://3.bp.blogspot.com/-eg8vL1p6M54/WToIhfaFF5I/AAAAAAAAARI/HxekjkFPpT8uHzSME4nR09Se-hcwE9wVQCEw/s1600/ir4.jpg)</br>
