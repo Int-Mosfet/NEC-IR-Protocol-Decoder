@@ -1,0 +1,35 @@
+
+
+Microchip Technology PIC18 Macro Assembler V1.41 build -162212810 
+                                                                                                           Sat Apr 08 12:05:22 2017
+
+
+     1                           	processor	18F27K40
+     2                           	opt	pw 132
+     3                           	psect	powerup,global,reloc=2,class=CODE,delta=1
+     4  0000                     stk_offset	set	0
+     5  0000                     auto_size	set	0
+     6                           
+     7                           ; stack_auto defines a symbol /name/_offset which equates to the
+     8                           ; stack offset of the auto object in question
+     9  0000                     
+    10                           ; stack_param defines a symbol /name/_offset which equates to the
+    11                           ; stack offset of the parameter object in question
+    12  0000                     
+    13                           ; alloc_stack adjusts the SP to allocate space for auto objects
+    14                           ; it also links in to the btemp symbol so that can be used
+    15  0000                     
+    16                           ; restore_stack adjusts the SP to remove all auto and parameter
+    17                           ; objects from the stack prior to returning from a function
+    18  0000                     
+    19                           	psect	powerup
+    20  000004                     powerup:
+    21                           	opt stack 0
+    22  000004  8E81               	bsf	3969,7,c
+    23  000006  EF05  F000         	goto	start
+
+
+Microchip Technology PIC18 Macro Assembler V1.41 build -162212810 
+Symbol Table                                                                                               Sat Apr 08 12:05:22 2017
+
+                          start 000A                          NVMCON1 000F81                          powerup 0004  
